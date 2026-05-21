@@ -5,137 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A birthday gallery for Hugo, the man who is usually behind the camera."
+      content="A birthday photo site for Hugo: part gallery, part evidence board, part public service."
     />
-    <title>Hugo, Through Other People's Lenses</title>
+    <title>Hugo, Caught On Camera</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="site-bg"></div>
     <div class="page-shell">
-      <header class="site-header">
-        <a class="site-mark" href="#top">Hugo Wu</a>
-        <nav class="site-nav" aria-label="Primary">
+      <header class="topbar">
+        <a class="brand" href="#top">
+          <span class="brand__dot"></span>
+          <span>Hugo Wu Archive</span>
+        </a>
+        <nav class="topbar__nav" aria-label="Primary">
           <a href="#gallery">Gallery</a>
-          <a href="#about">About</a>
-          <a href="#note">Birthday Note</a>
+          <a href="#notes">Field Notes</a>
+          <a href="#letter">Birthday Note</a>
         </nav>
       </header>
 
       <main id="top">
         <section class="hero">
           <div class="hero__copy">
-            <p class="eyebrow">Birthday Archive 2026</p>
-            <h1>Hugo, Through Other People's Lenses</h1>
+            <p class="kicker">Birthday Site 2026</p>
+            <h1>Hugo, Caught On Camera</h1>
             <p class="hero__lede">
-              A birthday gallery for the man who is usually behind the camera.
-              Equal parts tribute, evidence locker, and extremely selective
-              documentary practice.
+              A cheerful, unauthorized archive of one very photographable man.
+              Built because Hugo likes photography, and because it was finally
+              time to point the lens back at him.
             </p>
             <div class="hero__actions">
-              <a class="button button--solid" href="#gallery">Open the gallery</a>
-              <a class="button button--ghost" href="#note">Read the note</a>
+              <a class="button button--solid" href="#gallery">See the evidence</a>
+              <a class="button button--ghost" href="#letter">Read the note</a>
             </div>
+            <ul class="hero__chips" aria-label="Highlights">
+              <li>Actually good photos</li>
+              <li>Mildly incriminating ones</li>
+              <li>A birthday ambush with taste</li>
+            </ul>
           </div>
 
-          <aside class="hero__panel" aria-label="Exhibition notes">
-            <p class="hero__panel-label">Exhibition Notes</p>
-            <div class="hero__facts">
-              <article>
-                <span>01</span>
-                <h2>Usually the photographer</h2>
-                <p>
-                  For once, the framing is pointed in Hugo's direction.
-                </p>
-              </article>
-              <article>
-                <span>02</span>
-                <h2>Curated for maximum charm</h2>
-                <p>
-                  Some elegance. Some chaos. A suspicious amount of both.
-                </p>
-              </article>
-              <article>
-                <span>03</span>
-                <h2>Static site, dynamic reputation</h2>
-                <p>
-                  Built to be easy to keep, easy to share, and hard to deny.
-                </p>
-              </article>
-            </div>
-          </aside>
+          <div class="hero__stack" aria-label="Preview cards">
+            <article class="stack-card stack-card--a">
+              <span class="stack-card__label">Archive Entry 01</span>
+              <h2>Composed under pressure</h2>
+              <p>
+                For the image where Hugo looks far too put together given the
+                circumstances.
+              </p>
+            </article>
+            <article class="stack-card stack-card--b">
+              <span class="stack-card__label">Archive Entry 02</span>
+              <h2>Caught in perfect lighting</h2>
+              <p>
+                A deeply unfair amount of natural charisma may be present.
+              </p>
+            </article>
+            <article class="stack-card stack-card--c">
+              <span class="stack-card__label">Archive Entry 03</span>
+              <h2>Witnesses confirm everything</h2>
+              <p>
+                Friends, cameras, and several regrettable angles were involved.
+              </p>
+            </article>
+          </div>
         </section>
 
-        <section class="intro" id="about">
-          <div class="intro__card">
-            <p class="eyebrow">Why this exists</p>
-            <h2>The premise is simple.</h2>
-            <p>
-              Hugo likes photography. Hugo is also, unfortunately for him, very
-              photographable. This site turns that fact into a birthday present:
-              a clean little gallery that can start funny and become more
-              sincere over time.
-            </p>
-          </div>
-          <div class="intro__grid">
-            <article>
-              <h3>What works here</h3>
-              <p>
-                Candid photos, faux-serious captions, inside jokes, and one or
-                two genuinely great portraits.
-              </p>
-            </article>
-            <article>
-              <h3>What to avoid</h3>
-              <p>
-                Uploading everything. The joke lands better when the curation
-                looks intentional.
-              </p>
-            </article>
-            <article>
-              <h3>How to use it</h3>
-              <p>
-                Replace the placeholders with your own image files and keep the
-                captions playful.
-              </p>
-            </article>
-          </div>
+        <section class="strip">
+          <p>Curated with affection.</p>
+          <p>Biased toward funny photographs.</p>
+          <p>Designed to be updated without technical pain.</p>
         </section>
 
         <section class="gallery-section" id="gallery">
-          <div class="section-heading">
+          <div class="section-head">
             <div>
-              <p class="eyebrow">Selected Works</p>
-              <h2>The Gallery</h2>
+              <p class="kicker">Main Feature</p>
+              <h2>The Evidence Board</h2>
             </div>
-            <p class="section-heading__copy">
-              The placeholders below are ready for your photos. Add files into
-              <code>assets/photos/</code>, update one array in
-              <code>app.js</code>, and the site will do the rest.
+            <p class="section-head__copy">
+              This is where the actual photos land. The layout is already set
+              up for a mix of hero shots, candid moments, and one or two
+              completely indefensible images.
             </p>
           </div>
-
           <div class="gallery-grid" data-gallery></div>
         </section>
 
-        <section class="note" id="note">
-          <p class="eyebrow">Birthday Note</p>
-          <h2>To Hugo, with editorial seriousness and very mixed motives.</h2>
+        <section class="notes" id="notes">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Field Notes</p>
+              <h2>How this should feel</h2>
+            </div>
+          </div>
+          <div class="notes__grid">
+            <article>
+              <span>01</span>
+              <h3>Funny first</h3>
+              <p>
+                The point is affection with good timing, not a full biography or
+                a giant photo dump.
+              </p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Still visually clean</h3>
+              <p>
+                A joke site lands harder when the design looks deliberate rather
+                than improvised.
+              </p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Easy to maintain</h3>
+              <p>
+                Swap files, tweak captions, push to GitHub, and it stays live at
+                the custom domain.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="letter" id="letter">
+          <p class="kicker">Birthday Note</p>
+          <h2>This is a friendly ambush.</h2>
           <p>
-            Happy birthday. You have spent enough time behind cameras to earn a
-            brief, undeniable turn in front of them. This site is a record of
-            your excellent taste, your suspiciously photogenic timing, and the
-            fact that your friends are absolutely willing to build a whole
-            website around the funniest available evidence.
+            Happy birthday, Hugo. You spend enough time behind cameras that it
+            felt only right to make a small, public, beautifully arranged record
+            of the times you did not escape the frame.
           </p>
           <p>
-            May the next year contain good light, better adventures, and at
-            least a few images in which you are not the one doing the framing.
+            May the next year bring good light, better stories, and just enough
+            photographic evidence to keep you humble.
           </p>
         </section>
       </main>
@@ -155,11 +164,11 @@
         aria-labelledby="lightbox-title"
       >
         <button class="lightbox__close" type="button" aria-label="Close" data-close>
-          x
+          Close
         </button>
         <div class="lightbox__media" data-lightbox-media></div>
         <div class="lightbox__meta">
-          <p class="eyebrow">Expanded View</p>
+          <p class="kicker">Expanded View</p>
           <h2 id="lightbox-title" data-lightbox-title></h2>
           <p data-lightbox-caption></p>
         </div>

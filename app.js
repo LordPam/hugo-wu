@@ -1,51 +1,51 @@
 const photos = [
   {
-    title: "The Arrival Shot",
+    title: "The One Where He Knew",
     caption:
-      "Reserved for the exact frame where Hugo enters the room looking more composed than everyone else.",
+      "Save this slot for the photo where Hugo absolutely clocked the camera and still looked composed.",
     src: "",
     layout: "feature",
-    tone: "amber",
+    tone: "sunset",
   },
   {
-    title: "Candid, Allegedly",
+    title: "Caught Mid-Plot",
     caption:
-      "For the photo where he clearly noticed the camera but chose to let the moment play out anyway.",
+      "Ideal for the expression that suggests he was either telling a story or starting a scheme.",
     src: "",
     layout: "portrait",
-    tone: "sage",
+    tone: "ocean",
   },
   {
-    title: "Museum-Grade Side Profile",
+    title: "Unreasonably Photogenic",
     caption:
-      "One proper portrait belongs here so the joke never becomes cheap.",
+      "One legitimately strong portrait belongs here so the entire site has credibility.",
     src: "",
     layout: "square",
-    tone: "berry",
+    tone: "party",
   },
   {
-    title: "Evidence of Mischief",
+    title: "Evidence, Admissible",
     caption:
-      "A strong home for the most incriminating funny image that is still birthday-safe.",
+      "This slot is for the funniest safe image: enough chaos to be funny, not enough to be litigated.",
     src: "",
     layout: "landscape",
-    tone: "dusk",
+    tone: "garden",
   },
   {
-    title: "The Group Photo He Didn't Escape",
+    title: "No Escape From The Group Photo",
     caption:
-      "For the rare case in which the photographer is successfully trapped in the frame.",
+      "Reserve this one for the rare, satisfying moment when the photographer got trapped in the frame.",
     src: "",
     layout: "portrait",
     tone: "gold",
   },
   {
-    title: "Last Shot of the Night",
+    title: "Last Seen Looking Innocent",
     caption:
-      "Something warm, slightly chaotic, and conclusive enough to end the gallery well.",
+      "End with something warm, chaotic, and just ambiguous enough to raise new questions.",
     src: "",
     layout: "landscape",
-    tone: "clay",
+    tone: "night",
   },
 ];
 
