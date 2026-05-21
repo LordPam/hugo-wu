@@ -1,57 +1,57 @@
 const galleryItems = [
   {
-    tag: "Observed Phase 01",
+    tag: "Phase 01",
     title: "Condiment Diplomacy",
     caption:
-      "One witness brought ketchup. Another brought a drink. Hugo brought a look that suggests he already knew this website was coming.",
+      "Ketchup. Coke. Golf shirt. Strong start.",
     src: "assets/photos/gallery/hugo-golf-portrait.png",
     alt: "Hugo standing beside a friend in a restaurant while someone drinks from a glass.",
   },
   {
-    tag: "Observed Phase 02",
-    title: "The Formalwear Incident",
+    tag: "Phase 02",
+    title: "Formalwear",
     caption:
-      "A serious pose, a chaotic room, and a level of commitment that the surrounding laundry refused to match.",
+      "An excellent outfit in a very average room.",
     src: "assets/photos/gallery/hugo-fairway-alliance.png",
     alt: "Hugo posing in a dark coat and pink shoes in a messy bedroom.",
   },
   {
-    tag: "Observed Phase 03",
-    title: "Uncontrolled Selfie Conditions",
+    tag: "Phase 03",
+    title: "Selfie Chaos",
     caption:
-      "A photograph that answers no questions and somehow creates at least six new ones.",
+      "No explanation available.",
     src: "assets/photos/gallery/hugo-chaos-selfie.png",
     alt: "A selfie with Hugo and friends outdoors, with Hugo making a dramatic face.",
   },
   {
-    tag: "Observed Phase 04",
+    tag: "Phase 04",
     title: "Three-Man Scramble",
     caption:
-      "Proof that Hugo can stand on a coastline, hold a putter, and accidentally look like part of a campaign poster.",
+      "Good coastline. Good jumper. Good turnout.",
     src: "assets/photos/gallery/hugo-three-man-scramble.png",
     alt: "Hugo and two friends posing on a golf course by the sea.",
   },
   {
-    tag: "Observed Phase 05",
-    title: "Beach Golf Era",
+    tag: "Phase 05",
+    title: "Beach Golf",
     caption:
-      "Some people acquire hobbies. Hugo appears to acquire full landscapes.",
+      "Cap, coast, socks, clubs.",
     src: "assets/photos/gallery/hugo-beach-golf.png",
     alt: "Hugo standing on a golf course by the sea with a golf bag nearby.",
   },
   {
-    tag: "Observed Phase 06",
-    title: "Distant Sighting at Sunset",
+    tag: "Phase 06",
+    title: "Distant Sighting",
     caption:
-      "A tiny figure near a huge building, and still somehow unmistakably Hugo.",
+      "Still unmistakably Hugo from miles away.",
     src: "assets/photos/gallery/hugo-distant-sighting.png",
     alt: "A distant photo of Hugo near a large white building at sunset.",
   },
   {
-    tag: "Observed Phase 07",
-    title: "Breakfast Diplomacy",
+    tag: "Phase 07",
+    title: "Breakfast",
     caption:
-      "A polite glass of orange juice and the face of a man who knows he is being documented.",
+      "Orange juice. Full breakfast. Mild suspicion.",
     src: "assets/photos/gallery/hugo-breakfast-diplomacy.png",
     alt: "Hugo seated at breakfast holding a glass of orange juice and looking knowingly at the camera.",
   },
@@ -61,40 +61,14 @@ const panels = Array.from(document.querySelectorAll("[data-scene-panel]"));
 const gallery = document.querySelector("[data-gallery]");
 const beginButton = document.querySelector("[data-begin]");
 const nextButtons = Array.from(document.querySelectorAll("[data-next]"));
-const themeToggle = document.querySelector("[data-theme-toggle]");
-const themeLabel = document.querySelector("[data-theme-label]");
 const anthem = document.querySelector("[data-anthem]");
-const audioHint = document.querySelector("[data-audio-hint]");
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxMedia = document.querySelector("[data-lightbox-media]");
 const lightboxTitle = document.querySelector("[data-lightbox-title]");
 const lightboxCaption = document.querySelector("[data-lightbox-caption]");
 const closeButtons = document.querySelectorAll("[data-close]");
-const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
 
 let ceremonyStarted = false;
-
-function getEffectiveTheme() {
-  const explicitTheme = document.documentElement.dataset.theme;
-  if (explicitTheme === "light" || explicitTheme === "dark") {
-    return explicitTheme;
-  }
-  return prefersLight.matches ? "light" : "dark";
-}
-
-function updateThemeLabel() {
-  const nextTheme = getEffectiveTheme() === "dark" ? "light" : "dark";
-  themeLabel.textContent = `Switch to ${nextTheme}`;
-  themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
-}
-
-function applyStoredTheme() {
-  const storedTheme = localStorage.getItem("theme");
-  if (storedTheme === "light" || storedTheme === "dark") {
-    document.documentElement.dataset.theme = storedTheme;
-  }
-  updateThemeLabel();
-}
 
 function setScene(sceneName) {
   document.body.dataset.scene = sceneName;
@@ -174,23 +148,18 @@ async function beginCeremony() {
   document.body.classList.add("is-ceremony-live");
   beginButton.disabled = true;
   beginButton.textContent = "Ceremony underway";
-  audioHint.hidden = true;
 
   try {
     anthem.volume = 0.45;
     anthem.currentTime = 0;
     await anthem.play();
-  } catch (error) {
-    audioHint.textContent =
-      "Add an MP3 named assets/audio/chinese-anthem.mp3 if you want the anthem to play during this opening scene.";
-    audioHint.hidden = false;
-  }
+  } catch (error) {}
 
   window.setTimeout(() => {
     beginButton.hidden = true;
     const nextRevealButton = document.querySelector('[data-next="intro"]');
     nextRevealButton.hidden = false;
-  }, 4200);
+  }, 2600);
 }
 
 function handleKeydown(event) {
@@ -210,25 +179,11 @@ nextButtons.forEach((button) => {
   });
 });
 
-themeToggle.addEventListener("click", () => {
-  const nextTheme = getEffectiveTheme() === "dark" ? "light" : "dark";
-  document.documentElement.dataset.theme = nextTheme;
-  localStorage.setItem("theme", nextTheme);
-  updateThemeLabel();
-});
-
-prefersLight.addEventListener("change", () => {
-  if (!localStorage.getItem("theme")) {
-    updateThemeLabel();
-  }
-});
-
 closeButtons.forEach((button) => {
   button.addEventListener("click", closeLightbox);
 });
 
 document.addEventListener("keydown", handleKeydown);
 
-applyStoredTheme();
 renderGallery();
 setScene("reveal");

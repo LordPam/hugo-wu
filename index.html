@@ -17,10 +17,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-scene="reveal">
-    <button class="theme-toggle" type="button" data-theme-toggle>
-      <span data-theme-label>Switch theme</span>
-    </button>
-
     <audio data-anthem preload="auto">
       <source src="assets/audio/chinese-anthem.mp3" type="audio/mpeg" />
     </audio>
@@ -32,7 +28,7 @@
     <main class="journey">
       <section class="scene scene--reveal is-active" data-scene-panel="reveal" aria-labelledby="birthday-title">
         <div class="scene__inner scene__inner--center">
-          <p class="scene__eyebrow">For Hugo Wu</p>
+          <p class="scene__eyebrow">For Hugo</p>
           <h1 id="birthday-title" class="birthday-title">
             <span>Happy</span>
             <span>birthday,</span>
@@ -52,39 +48,33 @@
                 </g>
               </svg>
             </div>
-            <p class="ceremony__caption">
-              Quiet page. Loud opening. One ceremonial detour before the archive begins.
-            </p>
           </div>
 
           <div class="scene__actions">
             <button class="button button--solid" type="button" data-begin>
-              Start the ceremony
+              Begin
             </button>
             <button class="button button--ghost" type="button" data-next="intro" hidden>
               Continue
             </button>
           </div>
 
-          <p class="scene__hint">Click once for the animation and anthem. Click again for the next chapter.</p>
-          <p class="scene__audio-hint" data-audio-hint hidden></p>
+          <p class="scene__hint">Click to begin.</p>
         </div>
       </section>
 
       <section class="scene scene--intro" data-scene-panel="intro" hidden aria-labelledby="intro-title">
         <div class="scene__inner scene__inner--narrow">
-          <p class="scene__eyebrow">A Small Public Record</p>
+          <p class="scene__eyebrow">Next</p>
           <h2 id="intro-title" class="scene-title">
-            Today this website says happy birthday. Later it can become anything:
-            a gallery, a scrapbook, a running joke, or a surprisingly sincere archive.
+            A small website for Hugo.
           </h2>
           <p class="scene-copy">
-            The structure stays simple on purpose. The messages land first, the colours do the celebrating,
-            and then the photographic evidence arrives.
+            Today it says happy birthday. Later it can change into whatever we want.
           </p>
           <div class="scene__actions">
             <button class="button button--solid" type="button" data-next="gallery">
-              Open the archive
+              See the photos
             </button>
           </div>
         </div>
@@ -93,12 +83,12 @@
       <section class="scene scene--gallery" data-scene-panel="gallery" hidden aria-labelledby="gallery-title">
         <div class="scene__inner scene__inner--wide">
           <header class="scene-header">
-            <p class="scene__eyebrow">The Archive</p>
+            <p class="scene__eyebrow">Over Time</p>
             <h2 id="gallery-title" class="scene-title">
-              Some of the times he did not escape the frame.
+              Some photos of Hugo.
             </h2>
             <p class="scene-copy">
-              A few sightings, a few public appearances, and just enough material to keep him humble.
+              Golf, breakfast, chaos, formalwear.
             </p>
           </header>
 

@@ -76,7 +76,8 @@ body {
     var(--bg);
   color: var(--text);
   font-family: "Sora", sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body.is-gallery {
@@ -94,20 +95,6 @@ button {
 
 button {
   border: 0;
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 30;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--panel);
-  color: var(--text);
-  backdrop-filter: blur(18px);
-  cursor: pointer;
 }
 
 .background-glow {
@@ -231,8 +218,8 @@ body.is-ceremony-live .background-glow--three {
 
 .birthday-title span {
   display: block;
-  opacity: 0.32;
-  transform: translateY(18px) scale(0.98);
+  opacity: 0.72;
+  transform: translateY(8px) scale(0.995);
   transition: opacity 500ms ease, transform 500ms ease;
 }
 
@@ -270,9 +257,7 @@ body.is-ceremony-live .birthday-title span:nth-child(3) {
 }
 
 .scene-copy,
-.ceremony__caption,
 .scene__hint,
-.scene__audio-hint,
 .lightbox__meta p {
   color: var(--muted);
   line-height: 1.75;
@@ -284,20 +269,16 @@ body.is-ceremony-live .birthday-title span:nth-child(3) {
   font-size: 1.04rem;
 }
 
-.ceremony {
-  margin-top: 2rem;
-}
-
 .flag-shell {
   width: min(21rem, 72vw);
-  margin: 0 auto;
+  margin: 2rem auto 0;
   padding: 1rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
-  opacity: 0.3;
-  transform: translateY(18px) scale(0.97);
+  opacity: 0.82;
+  transform: translateY(8px) scale(0.99);
   transition: opacity 700ms ease, transform 700ms ease;
 }
 
@@ -315,11 +296,6 @@ body.is-ceremony-live .flag-shell {
 
 body.is-ceremony-live .flag-svg {
   animation: flag-wave 3.6s ease-in-out infinite;
-}
-
-.ceremony__caption {
-  max-width: 28rem;
-  margin: 1rem auto 0;
 }
 
 .scene__actions {
@@ -340,8 +316,6 @@ body.is-ceremony-live .flag-svg {
 
 .button:hover,
 .button:focus-visible,
-.theme-toggle:hover,
-.theme-toggle:focus-visible,
 .memory__frame:hover,
 .memory__frame:focus-visible {
   transform: translateY(-2px);
@@ -358,8 +332,7 @@ body.is-ceremony-live .flag-svg {
   border: 1px solid var(--line);
 }
 
-.scene__hint,
-.scene__audio-hint {
+.scene__hint {
   margin: 1rem auto 0;
   max-width: 28rem;
   font-size: 0.95rem;
@@ -378,6 +351,7 @@ body.is-ceremony-live .flag-svg {
 .memory {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  align-items: start;
   gap: 1rem;
   padding: 1rem;
   border: 1px solid var(--line);
@@ -397,14 +371,13 @@ body.is-ceremony-live .flag-svg {
   border-radius: calc(var(--radius-xl) - 8px);
   background: var(--bg-strong);
   cursor: pointer;
+  align-self: start;
 }
 
 .memory__frame img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 22rem;
-  object-fit: cover;
+  height: auto;
 }
 
 .memory__meta {
@@ -499,6 +472,8 @@ body.is-ceremony-live .flag-svg {
 }
 
 .lightbox__media {
+  display: grid;
+  place-items: center;
   min-height: min(74vh, 720px);
   overflow: hidden;
   border-radius: calc(var(--radius-xl) - 8px);
@@ -506,9 +481,12 @@ body.is-ceremony-live .flag-svg {
 }
 
 .lightbox__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  max-height: min(70vh, 680px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .lightbox__meta {
@@ -551,21 +529,12 @@ body.is-ceremony-live .flag-svg {
 }
 
 @media (max-width: 680px) {
-  .theme-toggle {
-    top: 0.7rem;
-    right: 0.7rem;
-  }
-
   .scene--gallery.is-active {
     padding-top: 4.6rem;
   }
 
   .memory {
     padding: 0.8rem;
-  }
-
-  .memory__frame img {
-    min-height: 16rem;
   }
 
   .birthday-quote {
