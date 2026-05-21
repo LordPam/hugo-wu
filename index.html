@@ -5,171 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="A birthday photo site for Hugo: part gallery, part evidence board, part public service."
+      content="A birthday journey for Hugo: a quiet opening, a loud ceremony, and a small archive of photographic evidence."
     />
-    <title>Hugo, Caught On Camera</title>
+    <title>Happy Birthday, Pookie</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Sora:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="site-bg"></div>
-    <div class="page-shell">
-      <header class="topbar">
-        <a class="brand" href="#top">
-          <span class="brand__dot"></span>
-          <span>Hugo Wu Archive</span>
-        </a>
-        <nav class="topbar__nav" aria-label="Primary">
-          <a href="#gallery">Gallery</a>
-          <a href="#notes">Field Notes</a>
-          <a href="#letter">Birthday Note</a>
-        </nav>
-      </header>
+  <body data-scene="reveal">
+    <button class="theme-toggle" type="button" data-theme-toggle>
+      <span data-theme-label>Switch theme</span>
+    </button>
 
-      <main id="top">
-        <section class="hero">
-          <div class="hero__copy">
-            <p class="kicker">Birthday Site 2026</p>
-            <h1>Hugo, Caught On Camera</h1>
-            <p class="hero__lede">
-              A cheerful, unauthorized archive of one very photographable man.
-              Built because Hugo likes photography, and because it was finally
-              time to point the lens back at him.
-            </p>
-            <div class="hero__actions">
-              <a class="button button--solid" href="#gallery">See the evidence</a>
-              <a class="button button--ghost" href="#letter">Read the note</a>
+    <audio data-anthem preload="auto">
+      <source src="assets/audio/chinese-anthem.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="background-glow background-glow--one"></div>
+    <div class="background-glow background-glow--two"></div>
+    <div class="background-glow background-glow--three"></div>
+
+    <main class="journey">
+      <section class="scene scene--reveal is-active" data-scene-panel="reveal" aria-labelledby="birthday-title">
+        <div class="scene__inner scene__inner--center">
+          <p class="scene__eyebrow">For Hugo Wu</p>
+          <h1 id="birthday-title" class="birthday-title">
+            <span>Happy</span>
+            <span>birthday,</span>
+            <span>pookie.</span>
+          </h1>
+
+          <div class="ceremony">
+            <div class="flag-shell" aria-hidden="true">
+              <svg class="flag-svg" viewBox="0 0 300 200" role="img" aria-label="Chinese flag">
+                <rect width="300" height="200" fill="#de2910"></rect>
+                <g fill="#ffde00">
+                  <polygon points="50,26 57,45 77,45 61,57 67,76 50,64 33,76 39,57 23,45 43,45"></polygon>
+                  <polygon points="112,23 115,31 124,31 117,36 120,44 112,39 105,44 107,36 100,31 109,31"></polygon>
+                  <polygon points="133,42 136,50 145,50 138,55 141,63 133,58 126,63 128,55 121,50 130,50"></polygon>
+                  <polygon points="131,69 134,77 143,77 136,82 139,90 131,85 124,90 126,82 119,77 128,77"></polygon>
+                  <polygon points="111,88 114,96 123,96 116,101 119,109 111,104 104,109 106,101 99,96 108,96"></polygon>
+                </g>
+              </svg>
             </div>
-            <ul class="hero__chips" aria-label="Highlights">
-              <li>Actually good photos</li>
-              <li>Mildly incriminating ones</li>
-              <li>A birthday ambush with taste</li>
-            </ul>
-          </div>
-
-          <div class="hero__stack" aria-label="Preview cards">
-            <article class="stack-card stack-card--a">
-              <span class="stack-card__label">Archive Entry 01</span>
-              <h2>Composed under pressure</h2>
-              <p>
-                For the image where Hugo looks far too put together given the
-                circumstances.
-              </p>
-            </article>
-            <article class="stack-card stack-card--b">
-              <span class="stack-card__label">Archive Entry 02</span>
-              <h2>Caught in perfect lighting</h2>
-              <p>
-                A deeply unfair amount of natural charisma may be present.
-              </p>
-            </article>
-            <article class="stack-card stack-card--c">
-              <span class="stack-card__label">Archive Entry 03</span>
-              <h2>Witnesses confirm everything</h2>
-              <p>
-                Friends, cameras, and several regrettable angles were involved.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="strip">
-          <p>Curated with affection.</p>
-          <p>Biased toward funny photographs.</p>
-          <p>Designed to be updated without technical pain.</p>
-        </section>
-
-        <section class="gallery-section" id="gallery">
-          <div class="section-head">
-            <div>
-              <p class="kicker">Main Feature</p>
-              <h2>The Evidence Board</h2>
-            </div>
-            <p class="section-head__copy">
-              This is where the actual photos land. The layout is already set
-              up for a mix of hero shots, candid moments, and one or two
-              completely indefensible images.
+            <p class="ceremony__caption">
+              Quiet page. Loud opening. One ceremonial detour before the archive begins.
             </p>
           </div>
-          <div class="gallery-grid" data-gallery></div>
-        </section>
 
-        <section class="notes" id="notes">
-          <div class="section-head">
-            <div>
-              <p class="kicker">Field Notes</p>
-              <h2>How this should feel</h2>
-            </div>
+          <div class="scene__actions">
+            <button class="button button--solid" type="button" data-begin>
+              Start the ceremony
+            </button>
+            <button class="button button--ghost" type="button" data-next="intro" hidden>
+              Continue
+            </button>
           </div>
-          <div class="notes__grid">
-            <article>
-              <span>01</span>
-              <h3>Funny first</h3>
-              <p>
-                The point is affection with good timing, not a full biography or
-                a giant photo dump.
-              </p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Still visually clean</h3>
-              <p>
-                A joke site lands harder when the design looks deliberate rather
-                than improvised.
-              </p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Easy to maintain</h3>
-              <p>
-                Swap files, tweak captions, push to GitHub, and it stays live at
-                the custom domain.
-              </p>
-            </article>
-          </div>
-        </section>
 
-        <section class="letter" id="letter">
-          <p class="kicker">Birthday Note</p>
-          <h2>This is a friendly ambush.</h2>
-          <p>
-            Happy birthday, Hugo. You spend enough time behind cameras that it
-            felt only right to make a small, public, beautifully arranged record
-            of the times you did not escape the frame.
+          <p class="scene__hint">Click once for the animation and anthem. Click again for the next chapter.</p>
+          <p class="scene__audio-hint" data-audio-hint hidden></p>
+        </div>
+      </section>
+
+      <section class="scene scene--intro" data-scene-panel="intro" hidden aria-labelledby="intro-title">
+        <div class="scene__inner scene__inner--narrow">
+          <p class="scene__eyebrow">A Small Public Record</p>
+          <h2 id="intro-title" class="scene-title">
+            Today this website says happy birthday. Later it can become anything:
+            a gallery, a scrapbook, a running joke, or a surprisingly sincere archive.
+          </h2>
+          <p class="scene-copy">
+            The structure stays simple on purpose. The messages land first, the colours do the celebrating,
+            and then the photographic evidence arrives.
           </p>
-          <p>
-            May the next year bring good light, better stories, and just enough
-            photographic evidence to keep you humble.
-          </p>
-        </section>
-      </main>
-    </div>
+          <div class="scene__actions">
+            <button class="button button--solid" type="button" data-next="gallery">
+              Open the archive
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene scene--gallery" data-scene-panel="gallery" hidden aria-labelledby="gallery-title">
+        <div class="scene__inner scene__inner--wide">
+          <header class="scene-header">
+            <p class="scene__eyebrow">The Archive</p>
+            <h2 id="gallery-title" class="scene-title">
+              Some of the times he did not escape the frame.
+            </h2>
+            <p class="scene-copy">
+              A few sightings, a few public appearances, and just enough material to keep him humble.
+            </p>
+          </header>
+
+          <div class="timeline" data-gallery></div>
+
+          <blockquote class="birthday-quote">
+            <p>
+              Happy birthday, Hugo. You spend enough time behind cameras that it felt only right
+              to make a small, public, beautifully arranged record of the times you did not escape the frame.
+            </p>
+            <p>
+              May the next year bring good light, better stories, and just enough photographic evidence
+              to keep you humble.
+            </p>
+          </blockquote>
+        </div>
+      </section>
+    </main>
 
     <div class="lightbox" data-lightbox hidden>
-      <button
-        class="lightbox__backdrop"
-        type="button"
-        aria-label="Close image viewer"
-        data-close
-      ></button>
-      <div
-        class="lightbox__dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="lightbox-title"
-      >
-        <button class="lightbox__close" type="button" aria-label="Close" data-close>
-          Close
-        </button>
+      <button class="lightbox__backdrop" type="button" data-close aria-label="Close photo viewer"></button>
+      <div class="lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+        <button class="lightbox__close" type="button" data-close>Close</button>
         <div class="lightbox__media" data-lightbox-media></div>
         <div class="lightbox__meta">
-          <p class="kicker">Expanded View</p>
-          <h2 id="lightbox-title" data-lightbox-title></h2>
+          <p class="scene__eyebrow">Expanded View</p>
+          <h2 id="lightbox-title" class="scene-title" data-lightbox-title></h2>
           <p data-lightbox-caption></p>
         </div>
       </div>
