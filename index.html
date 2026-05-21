@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A birthday gallery for Hugo, the man who is usually behind the camera."
+    />
+    <title>Hugo, Through Other People's Lenses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="site-mark" href="#top">Hugo Wu</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#note">Birthday Note</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero__copy">
+            <p class="eyebrow">Birthday Archive 2026</p>
+            <h1>Hugo, Through Other People's Lenses</h1>
+            <p class="hero__lede">
+              A birthday gallery for the man who is usually behind the camera.
+              Equal parts tribute, evidence locker, and extremely selective
+              documentary practice.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--solid" href="#gallery">Open the gallery</a>
+              <a class="button button--ghost" href="#note">Read the note</a>
+            </div>
+          </div>
+
+          <aside class="hero__panel" aria-label="Exhibition notes">
+            <p class="hero__panel-label">Exhibition Notes</p>
+            <div class="hero__facts">
+              <article>
+                <span>01</span>
+                <h2>Usually the photographer</h2>
+                <p>
+                  For once, the framing is pointed in Hugo's direction.
+                </p>
+              </article>
+              <article>
+                <span>02</span>
+                <h2>Curated for maximum charm</h2>
+                <p>
+                  Some elegance. Some chaos. A suspicious amount of both.
+                </p>
+              </article>
+              <article>
+                <span>03</span>
+                <h2>Static site, dynamic reputation</h2>
+                <p>
+                  Built to be easy to keep, easy to share, and hard to deny.
+                </p>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="intro" id="about">
+          <div class="intro__card">
+            <p class="eyebrow">Why this exists</p>
+            <h2>The premise is simple.</h2>
+            <p>
+              Hugo likes photography. Hugo is also, unfortunately for him, very
+              photographable. This site turns that fact into a birthday present:
+              a clean little gallery that can start funny and become more
+              sincere over time.
+            </p>
+          </div>
+          <div class="intro__grid">
+            <article>
+              <h3>What works here</h3>
+              <p>
+                Candid photos, faux-serious captions, inside jokes, and one or
+                two genuinely great portraits.
+              </p>
+            </article>
+            <article>
+              <h3>What to avoid</h3>
+              <p>
+                Uploading everything. The joke lands better when the curation
+                looks intentional.
+              </p>
+            </article>
+            <article>
+              <h3>How to use it</h3>
+              <p>
+                Replace the placeholders with your own image files and keep the
+                captions playful.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="gallery-section" id="gallery">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Selected Works</p>
+              <h2>The Gallery</h2>
+            </div>
+            <p class="section-heading__copy">
+              The placeholders below are ready for your photos. Add files into
+              <code>assets/photos/</code>, update one array in
+              <code>app.js</code>, and the site will do the rest.
+            </p>
+          </div>
+
+          <div class="gallery-grid" data-gallery></div>
+        </section>
+
+        <section class="note" id="note">
+          <p class="eyebrow">Birthday Note</p>
+          <h2>To Hugo, with editorial seriousness and very mixed motives.</h2>
+          <p>
+            Happy birthday. You have spent enough time behind cameras to earn a
+            brief, undeniable turn in front of them. This site is a record of
+            your excellent taste, your suspiciously photogenic timing, and the
+            fact that your friends are absolutely willing to build a whole
+            website around the funniest available evidence.
+          </p>
+          <p>
+            May the next year contain good light, better adventures, and at
+            least a few images in which you are not the one doing the framing.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <div class="lightbox" data-lightbox hidden>
+      <button
+        class="lightbox__backdrop"
+        type="button"
+        aria-label="Close image viewer"
+        data-close
+      ></button>
+      <div
+        class="lightbox__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lightbox-title"
+      >
+        <button class="lightbox__close" type="button" aria-label="Close" data-close>
+          x
+        </button>
+        <div class="lightbox__media" data-lightbox-media></div>
+        <div class="lightbox__meta">
+          <p class="eyebrow">Expanded View</p>
+          <h2 id="lightbox-title" data-lightbox-title></h2>
+          <p data-lightbox-caption></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
